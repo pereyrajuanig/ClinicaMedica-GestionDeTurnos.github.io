@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Turno | Clínica Médica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <i class="fas fa-heartbeat"></i>
+                <a href="index.html" class="logo-link">
+                    <h1>Clínica Médica</h1>
+                </a>
+            </div>
+            <div class="header-icons">
+                <a href="solicitar_turno.html" class="icon-link"><i class="fas fa-calendar-alt"></i></a>
+                <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+                <a href="#" class="icon-link"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+        <h2>Sistema de Gestión de Turnos</h2>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Inicio</a> &gt;
+            <span>Solicitar Turno</span>
+        </div>
+
+        <!-- Mensaje de éxito -->
+        <div class="success-message" id="success">
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Turno Solicitado con Éxito!</h3>
+            <p>Hemos recibido tu solicitud. Te enviaremos un correo electrónico con la confirmación de tu turno.</p>
+        </div>
+
+        <div class="formulario-turno">
+            <h2>Solicitar Turno Médico</h2>
+            <form id="turnoForm" class="turno-form" action="#success" method="GET">
+                <div class="form-section">
+                    <h3>Datos Personales</h3>
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dni">DNI *</label>
+                        <input type="text" id="dni" name="dni" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Detalles de la Cita</h3>
+                    <div class="form-group">
+                        <label for="especialidad">Especialidad *</label>
+                        <select id="especialidad" name="especialidad" required>
+                            <option value="">Seleccione una especialidad</option>
+                            <option value="cardiologia">Cardiología</option>
+                            <option value="dermatologia">Dermatología</option>
+                            <option value="ginecologia">Ginecología</option>
+                            <option value="oftalmologia">Oftalmología</option>
+                            <option value="pediatria">Pediatría</option>
+                            <option value="traumatologia">Traumatología</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="profesional">Profesional *</label>
+                        <select id="profesional" name="profesional" required>
+                            <option value="">Seleccione un profesional</option>
+                            <!-- Cardiología -->
+                            <optgroup label="Cardiología">
+                                <option value="ramirez">Dr. Antonio Ramírez</option>
+                                <option value="morales">Dra. Isabel Morales</option>
+                                <option value="silva">Dr. Fernando Silva</option>
+                            </optgroup>
+                            <!-- Dermatología -->
+                            <optgroup label="Dermatología">
+                                <option value="vega">Dra. Laura Vega</option>
+                                <option value="mendez">Dr. Carlos Méndez</option>
+                                <option value="torres">Dra. Ana Torres</option>
+                            </optgroup>
+                            <!-- Ginecología -->
+                            <optgroup label="Ginecología">
+                                <option value="rodriguez">Dra. María Rodríguez</option>
+                                <option value="martinez">Dra. Ana Martínez</option>
+                                <option value="lopez">Dra. Carmen López</option>
+                            </optgroup>
+                            <!-- Oftalmología -->
+                            <optgroup label="Oftalmología">
+                                <option value="garcia">Dr. Javier García</option>
+                                <option value="fernandez">Dra. Elena Fernández</option>
+                                <option value="ruiz">Dr. Carlos Ruiz</option>
+                            </optgroup>
+                            <!-- Pediatría -->
+                            <optgroup label="Pediatría">
+                                <option value="mendoza">Dr. Carlos Mendoza</option>
+                                <option value="vega">Dra. Laura Vega</option>
+                                <option value="perez">Dr. Juan Pérez</option>
+                            </optgroup>
+                            <!-- Traumatología -->
+                            <optgroup label="Traumatología">
+                                <option value="martinez">Dr. Roberto Martínez</option>
+                                <option value="gonzalez">Dra. Patricia González</option>
+                                <option value="torres">Dr. Miguel Ángel Torres</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha preferida *</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora preferida *</label>
+                        <select id="hora" name="hora" required>
+                            <option value="">Seleccione una hora</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Motivo de la Consulta</h3>
+                    <div class="form-group">
+                        <label for="motivo">Descripción breve del motivo *</label>
+                        <textarea id="motivo" name="motivo" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="observaciones">Observaciones adicionales</label>
+                        <textarea id="observaciones" name="observaciones" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">Acepto los términos y condiciones de la clínica *</label>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacidad" name="privacidad" required>
+                        <label for="privacidad">Acepto la política de privacidad y protección de datos *</label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-solicitar-cita">Solicitar Turno</button>
+                    <button type="reset" class="btn-solicitar-cita">Limpiar Formulario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
